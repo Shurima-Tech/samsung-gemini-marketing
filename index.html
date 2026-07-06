@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAMSUNG x Google Gemini | Next-Gen Digital Marketing Campaign</title>
+    <!-- Google Fonts: Inter & Prompt for gorgeous modern typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Prompt:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        /* ==================== BASE STYLES & RESET ==================== */
+        :root {
+            --samsung-blue: #034EA2;
+            --samsung-dark: #002F6C;
+            --gemini-cyan: #22d3ee;
+            --gemini-purple: #a855f7;
+            --bg-dark: #030712;
+            --card-bg: rgba(17, 24, 39, 0.7);
+            --border-color: rgba(59, 130, 246, 0.2);
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-primary);
+            font-family: 'Prompt', 'Inter', sans-serif;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Ambient Background Gradients */
+        .ambient-glow-1 {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(3, 78, 162, 0.2) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .ambient-glow-2 {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(168, 85, 247, 0.15) 0%, transparent 70%);
+            top: 40%;
+            left: -150px;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        /* ==================== NAVIGATION BAR ==================== */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 8%;
+            background-color: rgba(3, 7, 18, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .samsung-logo {
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-transform: uppercase;
+        }
+
+        .gemini-logo {
+            background: linear-gradient(90deg, var(--gemini-cyan), var(--gemini-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+            font-size: 18px;
+            padding-left: 10px;
+            border-left: 2px solid #334155;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gemini-cyan);
+        }
+
+        .btn-premium {
+            background: linear-gradient(135deg, var(--samsung-blue), #1d4ed8);
+            color: #ffffff !important;
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-weight: 600 !important;
+            box-shadow: 0 4px 15px rgba(3, 78, 162, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(3, 78, 162, 0.6);
+        }
+
+        /* ==================== HERO SECTION ==================== */
+        .hero {
+            padding: 180px 8% 100px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 90vh;
+            gap: 50px;
+        }
+
+        .hero-content {
+            flex: 1.2;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(34, 211, 238, 0.1);
+            border: 1px solid rgba(34, 211, 238, 0.3);
+            padding: 6px 16px;
+            border-radius: 50px;
+            color: var(--gemini-cyan);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            background: linear-gradient(to right, #ffffff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-title span {
+            background: linear-gradient(90deg, var(--gemini-cyan), var(--gemini-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-description {
+            color: var(--text-secondary);
+            font-size: 18px;
+            margin-bottom: 40px;
+            max-width: 620px;
+            font-weight: 300;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .btn-glow {
+            background: linear-gradient(90deg, var(--gemini-cyan), var(--gemini-purple));
+            color: #030712;
+            font-weight: 700;
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-glow:hover {
+            transform: scale(1.03);
+            box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+            color: #ffffff;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border-color);
+            background: rgba(17, 24, 39, 0.5);
+            color: var(--text-primary);
+            padding: 15px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-outline:hover {
+            background: var(--border-color);
+            border-color: var(--gemini-cyan);
+        }
+
+        .hero-visual {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        /* Floating Premium Smartphone Frame */
+        .phone-frame-outer {
+            width: 320px;
+            height: 480px;
+            border-radius: 24px;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--samsung-blue), var(--gemini-purple));
+            box-shadow: 0 25px 50px -12px rgba(3, 78, 162, 0.5);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .phone-frame-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 16px;
+            overflow: hidden;
+            background-color: #080c14;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .phone-frame-inner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Floating effect animation */
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
+            100% { transform: translateY(0px) rotate(0deg); }
+        }
+
+        /* ==================== CAMPAIGN HIGHLIGHTS (8.a) ==================== */
+        .section-padding {
+            padding: 100px 8%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            color: var(--samsung-blue);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 40px;
+            font-weight: 800;
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 15px auto 0;
+            font-weight: 300;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--gemini-cyan);
+            box-shadow: 0 10px 30px rgba(34, 211, 238, 0.1);
+        }
+
+        .feature-icon-wrapper {
+            width: 60px;
+            height: 60px;
+            border-radius: 15px;
+            background: rgba(3, 78, 162, 0.1);
+            border: 1px solid rgba(3, 78, 162, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gemini-cyan);
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+
+        .feature-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .feature-card p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        /* ==================== INTERACTIVE AI ENGINE ==================== */
+        .ai-engine-container {
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8) 0%, rgba(3, 7, 18, 0.95) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 60px;
+            max-width: 1000px;
+            margin: 0 auto;
+            backdrop-filter: blur(12px);
+        }
+
+        .quiz-step {
+            display: none;
+        }
+
+        .quiz-step.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .option-card {
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            cursor: pointer;
+            text-align: left;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .option-card:hover {
+            border-color: var(--gemini-cyan);
+            background: rgba(34, 211, 238, 0.05);
+            transform: translateX(5px);
+        }
+
+        .option-card.selected {
+            background: rgba(3, 78, 162, 0.2);
+            border-color: var(--samsung-blue);
+            box-shadow: 0 0 15px rgba(3, 78, 162, 0.3);
+        }
+
+        .option-icon {
+            font-size: 28px;
+            color: var(--gemini-cyan);
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(34, 211, 238, 0.1);
+            border-radius: 12px;
+        }
+
+        .option-details h4 {
+            font-size: 18px;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .option-details p {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        /* Result Panel */
+        .result-panel {
+            text-align: center;
+            display: none;
+        }
+
+        .result-panel.active {
+            display: block;
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .device-card {
+            display: flex;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 800px;
+            align-items: center;
+            gap: 40px;
+            text-align: left;
+        }
+
+        .device-image {
+            flex: 1;
+            max-width: 250px;
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .device-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .device-info {
+            flex: 1.5;
+        }
+
+        .device-tag {
+            background: var(--samsung-blue);
+            color: #ffffff;
+            font-size: 11px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 50px;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .device-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ffffff;
+        }
+
+        .device-desc {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .spec-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .spec-list li {
+            font-size: 13px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .spec-list i {
+            color: var(--gemini-cyan);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 6px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50px;
+            margin-top: 40px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            height: 100%;
+            width: 33.33%;
+            background: linear-gradient(90deg, var(--samsung-blue), var(--gemini-cyan));
+            transition: width 0.3s ease;
+        }
+
+        /* ==================== E-BOOK & OMNI-CHANNEL (8.b) ==================== */
+        .ebook-showcase {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            background: linear-gradient(135deg, rgba(3, 78, 162, 0.1) 0%, rgba(168, 85, 247, 0.05) 100%);
+            border: 1px solid var(--border-color);
+            border-radius: 30px;
+            padding: 60px;
+        }
+
+        .ebook-visual {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .ebook-mockup {
+            width: 340px;
+            height: 440px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .ebook-mockup img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ebook-content {
+            flex: 1.2;
+        }
+
+        .qr-card-container {
+            display: flex;
+            background: rgba(3, 7, 18, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 35px;
+            align-items: center;
+            gap: 25px;
+            max-width: 480px;
+        }
+
+        .qr-holder {
+            width: 100px;
+            height: 100px;
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .qr-holder:hover {
+            transform: scale(1.08);
+        }
+
+        .qr-holder i {
+            font-size: 80px;
+            color: #000000;
+        }
+
+        .qr-details h5 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #ffffff;
+        }
+
+        .qr-details p {
+            font-size: 13px;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        /* Modal for Scan Success Simulation */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(3, 7, 18, 0.9);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: #0f172a;
+            border: 2px solid var(--gemini-cyan);
+            border-radius: 24px;
+            padding: 50px;
+            text-align: center;
+            max-width: 450px;
+            box-shadow: 0 0 50px rgba(34, 211, 238, 0.3);
+            animation: scaleUp 0.3s ease-out;
+        }
+
+        @keyframes scaleUp {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 2px solid #10b981;
+            color: #10b981;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            margin: 0 auto 25px;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            background-color: #020617;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 80px 8% 40px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr repeat(2, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-info p {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 15px;
+            max-width: 320px;
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: var(--gemini-cyan);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: #475569;
+            font-size: 12px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 968px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 140px;
+            }
+            .hero-description {
+                margin: 0 auto 30px;
+            }
+            .hero-actions {
+                justify-content: center;
+            }
+            .ebook-showcase {
+                flex-direction: column;
+                gap: 40px;
+                padding: 40px;
+            }
+            .device-card {
+                flex-direction: column;
+                padding: 30px;
+            }
+            .options-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Ambient Glow Effects -->
+    <div class="ambient-glow-1"></div>
+    <div class="ambient-glow-2"></div>
+
+    <!-- Navigation Header -->
+    <nav>
+        <div class="logo-container">
+            <span class="samsung-logo">SAMSUNG</span>
+            <span class="gemini-logo">Gemini Marketing</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#features">แคมเปญ 8.a</a></li>
+            <li><a href="#ai-assistant">วิเคราะห์สินค้า AI</a></li>
+            <li><a href="#ebook">เชื่อมต่อ E-Book</a></li>
+            <li><a href="#ebook" class="btn-premium">รับ E-Book ฟรี</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-tag">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> ขับเคลื่อนแคมเปญออนไลน์ด้วย Google Gemini AI
+            </div>
+            <h1 class="hero-title">
+                ปฏิวัติความพึงพอใจ<br>ด้วยระบบ <span>Personalization</span>
+            </h1>
+            <p class="hero-description">
+                ครั้งแรกของการเชื่อมประสานระหว่างนวัตกรรมสมาร์ทโฟนที่ดีที่สุดจาก SAMSUNG และขุมพลังวิเคราะห์อัจฉริยะจาก Google Gemini AI เพื่อคัดกรองโปรโมชันที่สมบูรณ์แบบให้กับคุณแบบรายบุคคล
+            </p>
+            <div class="hero-actions">
+                <a href="#ai-assistant" class="btn-glow">
+                    <i class="fa-solid fa-robot"></i> เริ่มวิเคราะห์สไตล์คุณ
+                </a>
+                <a href="#ebook" class="btn-outline">
+                    <i class="fa-solid fa-book-open"></i> โครงสร้างแคมเปญ (ข้อ 8.b)
+                </a>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="phone-frame-outer">
+                <div class="phone-frame-inner">
+                    <!-- Samsung Premium Phone Image -->
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/169944340840693198_0" alt="Samsung Galaxy Premium Smartphone Minimal Design">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Campaign & AI Features Section (ข้อ 8.a) -->
+    <section class="section-padding" id="features">
+        <div class="section-header">
+            <span class="section-tag">SAMSUNG x GOOGLE GEMINI</span>
+            <h2 class="section-title">8.a ออกแบบเว็บไซต์สนับสนุนการตลาด</h2>
+            <p class="section-desc">การใช้ประโยชน์จาก Generative AI (Google Gemini) ในการแปลงโฉมการจัดแสดงสินค้าและสร้างหน้าการขาย (Conversion Landing Page) อัจฉริยะ</p>
+        </div>
+
+        <div class="feature-grid">
+            <!-- Card 1 -->
+            <div class="feature-card">
+                <div class="feature-icon-wrapper">
+                    <i class="fa-solid fa-brain"></i>
+                </div>
+                <h3>Gemini Smart Engine</h3>
+                <p>AI อัจฉริยะช่วยตอบคำถาม แนะนำตัวเลือก และปรับข้อความต้อนรับบนเว็บไซต์ให้เข้ากับผู้ใช้งานที่กดผ่านคิวอาร์โค้ดจากช่องทางต่างๆ แบบ Dynamic Copywriting</p>
+            </div>
+            <!-- Card 2 -->
+            <div class="feature-card">
+                <div class="feature-icon-wrapper">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h3>Conversion Boost</h3>
+                <p>เพิ่มอัตราการคลิกซื้อสินค้า (CTR) ด้วยระบบคัดเลือกคูปองส่วนลดและของแถมที่แปรผันตามพฤติกรรมการเล่นเกมและสไตล์การใช้ชีวิตที่วิเคราะห์โดย AI</p>
+            </div>
+            <!-- Card 3 -->
+            <div class="feature-card">
+                <div class="feature-icon-wrapper">
+                    <i class="fa-solid fa-arrows-spin"></i>
+                </div>
+                <h3>Omnichannel Tracking</h3>
+                <p>ผนวกรวมข้อมูลและติดตามเส้นทางของลูกค้าแบบไร้รอยต่อระหว่างพจนานุกรมความรู้บน E-Book และระบบการขายจริงบนหน้า Landing Page</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive AI Engine Tool -->
+    <section class="section-padding" id="ai-assistant" style="background-color: rgba(3, 7, 18, 0.5);">
+        <div class="section-header">
+            <span class="section-tag">INTERACTIVE EXPERIENCE</span>
+            <h2 class="section-title">ให้ AI เลือกสมาร์ทโฟนที่ใช่สำหรับคุณ</h2>
+            <p class="section-desc">ลองตอบคำถามสั้นๆ 2 ข้อ เพื่อทดสอบพลังประมวลผลแนะนำแบบจำลองระดับพรีเมียมจากระบบจำลองของ Google Gemini AI</p>
+        </div>
+
+        <div class="ai-engine-container">
+            <!-- Step 1: Lifestyle -->
+            <div class="quiz-step active" id="step-1">
+                <h3 style="text-align: center; margin-bottom: 10px; font-weight: 500;">คำถามที่ 1: ลักษณะการใช้งานส่วนใหญ่ของคุณคืออะไร?</h3>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 14px;">(กรุณาเลือก 1 ตัวเลือกด้านล่าง)</p>
+                <div class="options-grid">
+                    <div class="option-card" onclick="selectOption('lifestyle', 'photo', 1)">
+                        <div class="option-icon"><i class="fa-solid fa-camera"></i></div>
+                        <div class="option-details">
+                            <h4>ถ่ายภาพและทำคอนเทนต์</h4>
+                            <p>ชอบถ่ายรูปท่องเที่ยว VLOG, ซูมภาพ และแต่งภาพ</p>
+                        </div>
+                    </div>
+                    <div class="option-card" onclick="selectOption('lifestyle', 'work', 1)">
+                        <div class="option-icon"><i class="fa-solid fa-briefcase"></i></div>
+                        <div class="option-details">
+                            <h4>ทำงาน และจดโน้ตจริงจัง</h4>
+                            <p>เน้นเปิดเว็บบอร์ด ทำงานหลายแอปพร้อมกัน จดบันทึก</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Step 2: Priority Feature -->
+            <div class="quiz-step" id="step-2">
+                <h3 style="text-align: center; margin-bottom: 10px; font-weight: 500;">คำถามที่ 2: ฟังก์ชันนวัตกรรมที่คุณให้ความสำคัญที่สุดคืออะไร?</h3>
+                <p style="text-align: center; color: var(--text-secondary); font-size: 14px;">(กรุณาเลือก 1 ตัวเลือกด้านล่าง)</p>
+                <div class="options-grid">
+                    <div class="option-card" onclick="selectOption('feature', 'ultra-zoom', 2)">
+                        <div class="option-icon"><i class="fa-solid fa-expand"></i></div>
+                        <div class="option-details">
+                            <h4>สุดยอดการซูมด้วย AI</h4>
+                            <p>ซูมสูงสุด 100 เท่า คมชัดพร้อมเก็บรายละเอียดที่มืด</p>
+                        </div>
+                    </div>
+                    <div class="option-card" onclick="selectOption('feature', 'multitask', 2)">
+                        <div class="option-icon"><i class="fa-solid fa-window-restore"></i></div>
+                        <div class="option-details">
+                            <h4>เปิดสองจอพร้อมปากกา S-Pen</h4>
+                            <p>ขีดเขียนลื่นไหล ทำงานอย่างมีสไตล์และคล่องตัว</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Loading Spinner (Simulation) -->
+            <div class="quiz-step" id="step-loading" style="text-align: center; padding: 40px 0;">
+                <i class="fa-solid fa-circle-notch fa-spin" style="font-size: 50px; color: var(--gemini-cyan); margin-bottom: 20px;"></i>
+                <h3>กำลังเรียกใช้ Google Gemini API เพื่อประมวลผลคำแนะนำ...</h3>
+                <p style="color: var(--text-secondary); margin-top: 10px;">วิเคราะห์พฤติกรรมและความเข้ากันได้ของสเปกสินค้า</p>
+            </div>
+
+            <!-- Result Panel -->
+            <div class="result-panel" id="result-panel">
+                <h3 style="font-size: 24px; color: var(--gemini-cyan); font-weight: 700;"><i class="fa-solid fa-sparkles"></i> ประมวลผลลัพธ์สำเร็จจาก Gemini AI</h3>
+                <p style="color: var(--text-secondary); margin-top: 5px;">นี่คือผลิตภัณฑ์ Samsung ระดับ Flagship ที่สมบูรณ์แบบสำหรับคุณ</p>
+
+                <div class="device-card">
+                    <div class="device-image">
+                        <!-- Samsung Phone Result -->
+                        <img id="result-img" src="http://googleusercontent.com/image_collection/image_retrieval/169944340840693198_0" alt="Samsung Galaxy Premium Phone Output">
+                    </div>
+                    <div class="device-info">
+                        <span class="device-tag" id="result-tag">Galaxy Ultra Flagship</span>
+                        <h4 class="device-name" id="result-name">SAMSUNG Galaxy S Ultra Series</h4>
+                        <p class="device-desc" id="result-desc">
+                            นวัตกรรมกล้องถ่ายรูปความละเอียดสูงสุด 200 ล้านพิกเซล ผสานพลัง AI Zoom 100 เท่าอันเป็นเลิศ พร้อมรองรับการใช้งานปากกาอัจฉริยะสำหรับการจดและทำงานระดับมืออาชีพ
+                        </p>
+                        <ul class="spec-list" id="result-specs">
+                            <li><i class="fa-solid fa-microchip"></i> Snapdragon 8 Gen 3 for Galaxy</li>
+                            <li><i class="fa-solid fa-camera"></i> 200MP Main Camera with Gemini AI</li>
+                            <li><i class="fa-solid fa-pencil"></i> Built-in S-Pen Support</li>
+                            <li><i class="fa-solid fa-bolt"></i> 45W Super Fast Charging 2.0</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="display: flex; gap: 15px; justify-content: center; margin-top: 20px;">
+                    <button onclick="resetQuiz()" class="btn-outline" style="padding: 10px 25px; font-size: 14px; cursor: pointer;">
+                        <i class="fa-solid fa-rotate"></i> เริ่มใหม่อีกครั้ง
+                    </button>
+                    <a href="#ebook" class="btn-glow" style="padding: 10px 25px; font-size: 14px;">
+                        รับโค้ดส่วนลด 15% ทันที <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Progress Indicator -->
+            <div class="progress-bar-container" id="progress-container">
+                <div class="progress-bar-fill" id="progress-bar"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- E-Book Link & QR Code Section (ข้อ 8.b) -->
+    <section class="section-padding" id="ebook">
+        <div class="section-header">
+            <span class="section-tag">8.b OMNICHANNEL LINKAGE</span>
+            <h2 class="section-title">การเชื่อมต่อผ่าน E-Book และ QR Code</h2>
+            <p class="section-desc">เชื่อมโยงลูกค้าที่อ่านหนังสือความรู้ออนไลน์ E-Book เข้าสู่หน้าเว็บไซต์โปรโมชันนี้ได้อย่างราบรื่นและสามารถตรวจสอบแหล่งที่มา (Tracking) ได้อย่างมีประสิทธิภาพ</p>
+        </div>
+
+        <div class="ebook-showcase">
+            <div class="ebook-visual">
+                <div class="ebook-mockup">
+                    <!-- Premium Tablet Ebook Mock Up -->
+                    <img src="http://googleusercontent.com/image_collection/image_retrieval/5630608128392284542_0" alt="SAMSUNG Digital Marketing Campaign Premium E-Book Concept">
+                </div>
+            </div>
+            <div class="ebook-content">
+                <h3 style="font-size: 28px; font-weight: 700; color: #ffffff; margin-bottom: 20px;">แคมเปญแจก Digital Marketing E-Book</h3>
+                <p style="color: var(--text-secondary); font-size: 16px; margin-bottom: 25px; line-height: 1.8;">
+                    เมื่อกลุ่มเป้าหมายสแกน QR Code จากหนังสือ E-book ระบบจะลิงก์เชื่อมต่อเข้ามายังหน้านี้พร้อมรับรหัสพิเศษเฉพาะเพื่อใช้ในการซื้อสมาร์ทโฟน นอกจากนี้ ตัวระบบยังวิเคราะห์สถิติจำนวนคนคลิกและการเข้าใช้งานเพื่อให้แบรนด์เข้าใจกลุ่มผู้ซื้ออย่างลึกซึ้ง
+                </p>
+                
+                <div class="qr-card-container">
+                    <div class="qr-holder" onclick="simulateScan()">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <div class="qr-details">
+                        <h5>ทดลองสแกน QR Code จำลอง</h5>
+                        <p>คลิกที่คิวอาร์โค้ดด้านซ้าย เพื่อจำลองเหตุการณ์ในการสแกนเข้าเว็บ (ได้รับรหัสส่วนลด 15% สำหรับสั่งซื้อสมาร์ทโฟน Samsung ทันที)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scan Success Simulation Modal -->
+    <div class="modal" id="success-modal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 style="color: #ffffff; font-size: 24px; margin-bottom: 15px; font-weight: 700;">สแกนเชื่อมต่อจาก E-Book สำเร็จ!</h3>
+            <p style="color: var(--text-secondary); font-size: 15px; margin-bottom: 30px; line-height: 1.6;">
+                ระบบวิเคราะห์เส้นทาง (Omni-channel Tracking) ตรวจจับที่มาจาก E-Book เรียบร้อย ขอต้อนรับคุณเข้าสู่แคมเปญ Samsung x Gemini โค้ดส่วนลดของคุณพร้อมใช้งานแล้ว!
+            </p>
+            <div style="background: rgba(16, 185, 129, 0.1); border: 1px dashed #10b981; padding: 15px; border-radius: 12px; margin-bottom: 30px;">
+                <span style="font-size: 12px; text-transform: uppercase; color: #10b981; font-weight: 700; display: block; margin-bottom: 5px;">รหัสคูปองของคุณ</span>
+                <span style="font-size: 22px; font-weight: 800; color: #ffffff; letter-spacing: 2px;">GEMINIMKTG15</span>
+            </div>
+            <button onclick="closeModal()" class="btn-glow" style="border: none; width: 100%; justify-content: center; cursor: pointer;">
+                เข้าสู่เว็บไซต์และสะสมสิทธิ์
+            </button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-info">
+                <span class="samsung-logo" style="font-size: 20px;">SAMSUNG</span>
+                <span class="gemini-logo" style="font-size: 15px; border-left: 1px solid #334155; padding-left: 8px;">Gemini</span>
+                <p>โปรเจกต์นวัตกรรมแคมเปญการตลาดดิจิทัลที่ทำงานร่วมกับขุมพลังปัญญาประดิษฐ์ยุคถัดไป ออกแบบและโครงสร้างนำเสนอตามข้อตกลงและหลักสูตรการสอน</p>
+            </div>
+            <div class="footer-links">
+                <h4>แคมเปญ</h4>
+                <ul>
+                    <li><a href="#features">โครงสร้างข้อ 8.a</a></li>
+                    <li><a href="#ebook">โครงสร้างข้อ 8.b</a></li>
+                    <li><a href="#ai-assistant">ทดลองวิเคราะห์ด้วย AI</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>สนับสนุนข้อมูล</h4>
+                <ul>
+                    <li><a href="#">ภาพอ้างอิง image_f943ac.png</a></li>
+                    <li><a href="#">ข้อมูลออกแบบ image_f95a4e.png</a></li>
+                    <li><a href="https://github.com" target="_blank">คู่มืออัปขึ้น GitHub Pages</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2026 Samsung Electronics & Google Gemini Marketing Assignment. All Rights Reserved.</span>
+            <span>ดีไซน์และพัฒนาโค้ดโดย AI Gemini (ส่งการบ้านอาจารย์)</span>
+        </div>
+    </footer>
+
+    <!-- Interactive JS Controller -->
+    <script>
+        let quizAnswers = {
+            lifestyle: null,
+            feature: null
+        };
+
+        function selectOption(category, value, step) {
+            // Store answer
+            quizAnswers[category] = value;
+            
+            // Mark option as selected visually
+            const stepElement = document.getElementById(`step-${step}`);
+            const cards = stepElement.querySelectorAll('.option-card');
+            cards.forEach(card => card.classList.remove('selected'));
+            
+            event.currentTarget.classList.add('selected');
+
+            // Move to next step or show results
+            setTimeout(() => {
+                if (step === 1) {
+                    document.getElementById('step-1').classList.remove('active');
+                    document.getElementById('step-2').classList.add('active');
+                    document.getElementById('progress-bar').style.width = '66.66%';
+                } else if (step === 2) {
+                    document.getElementById('step-2').classList.remove('active');
+                    document.getElementById('step-loading').classList.add('active');
+                    document.getElementById('progress-bar').style.width = '100%';
+                    
+                    // Simulate Gemini API Call
+                    setTimeout(() => {
+                        document.getElementById('step-loading').classList.remove('active');
+                        renderResult();
+                    }, 1200);
+                }
+            }, 300);
+        }
+
+        function renderResult() {
+            const nameEl = document.getElementById('result-name');
+            const descEl = document.getElementById('result-desc');
+            const tagEl = document.getElementById('result-tag');
+            const specsEl = document.getElementById('result-specs');
+            const imgEl = document.getElementById('result-img');
+
+            if (quizAnswers.lifestyle === 'photo' && quizAnswers.feature === 'ultra-zoom') {
+                tagEl.innerText = "Galaxy S Ultra Camera Master";
+                nameEl.innerText = "Samsung Galaxy S Ultra";
+                descEl.innerText = "เหมาะที่สุดสำหรับคุณที่รักการถ่ายภาพและวิดีโอ! ขับเคลื่อนความคมชัดด้วยกล้องหลัก 200 ล้านพิกเซล และระบบ AI Super Zoom ซูม 100 เท่าพร้อมปรับแสงอัตโนมัติให้สวยคมในทุกช่วงเวลา";
+                specsEl.innerHTML = `
+                    <li><i class="fa-solid fa-camera"></i> 200MP Main + AI Processing</li>
+                    <li><i class="fa-solid fa-expand"></i> 100x Space Zoom with Stable Stabilization</li>
+                    <li><i class="fa-solid fa-microchip"></i> Snapdragon 8 Gen 3 for Galaxy</li>
+                    <li><i class="fa-solid fa-pencil"></i> Built-in S-Pen for fast editing</li>
+                `;
+            } else if (quizAnswers.lifestyle === 'work' && quizAnswers.feature === 'multitask') {
+                tagEl.innerText = "Galaxy Z Fold Multitasker Elite";
+                nameEl.innerText = "Samsung Galaxy Z Fold";
+                descEl.innerText = "ตอบโจทย์ชีวิตที่มุ่งเน้นการจัดการและทำงานอย่างยิ่ง! ด้วยดีไซน์หน้าจอพับได้ขนาดใหญ่เพื่อเพิ่มพื้นที่การทำงานพร้อมกันถึง 3 แอปพลิเคชันอย่างราบรื่นคู่กับปากกา S-Pen สุดประณีต";
+                specsEl.innerHTML = `
+                    <li><i class="fa-solid fa-tablet-screen-button"></i> 7.6" Main Dynamic AMOLED screen</li>
+                    <li><i class="fa-solid fa-window-restore"></i> Multi-Active Window up to 3 Apps</li>
+                    <li><i class="fa-solid fa-pencil"></i> S-Pen Fold Edition Support</li>
+                    <li><i class="fa-solid fa-shield"></i> Durable Armor Aluminum Frame</li>
+                `;
+            } else {
+                // Default fallback flagship combination
+                tagEl.innerText = "Galaxy Flagship Advanced Edition";
+                nameEl.innerText = "Samsung Galaxy Premium Series";
+                descEl.innerText = "การรวมตัวของคุณสมบัติที่ยอดเยี่ยมที่สุด ไม่ว่าจะเป็นชิปเซ็ตประมวลผลระดับเทพ หน้าจอรีเฟรชเรทระดับสูงเพื่อเกมมิ่ง และฟังก์ชันอัจฉริยะปรับตัวตามการใช้งานของคุณในแต่ละวัน";
+                specsEl.innerHTML = `
+                    <li><i class="fa-solid fa-microchip"></i> AI Optimized Core Performance</li>
+                    <li><i class="fa-solid fa-bolt"></i> Intelligent Battery Management</li>
+                    <li><i class="fa-solid fa-wind"></i> Advanced Vapor Cooling Chamber</li>
+                    <li><i class="fa-solid fa-mobile"></i> Dynamic AMOLED 2X 120Hz display</li>
+                `;
+            }
+
+            document.getElementById('progress-container').style.display = 'none';
+            document.getElementById('result-panel').classList.add('active');
+        }
+
+        function resetQuiz() {
+            quizAnswers = { lifestyle: null, feature: null };
+            document.getElementById('result-panel').classList.remove('active');
+            
+            // Reset active card styling
+            const cards = document.querySelectorAll('.option-card');
+            cards.forEach(card => card.classList.remove('selected'));
+
+            document.getElementById('step-1').classList.add('active');
+            document.getElementById('progress-container').style.display = 'block';
+            document.getElementById('progress-bar').style.width = '33.33%';
+        }
+
+        // Omni-channel scan simulator (8.b)
+        function simulateScan() {
+            document.getElementById('success-modal').style.display = 'flex';
+        }
+
+        function closeModal() {
+            document.getElementById('success-modal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
